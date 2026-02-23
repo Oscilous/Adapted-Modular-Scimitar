@@ -2,6 +2,8 @@
 
 Repository of the HardwareX paper "Field-tested workflow for adapting open-source 3D-printed fixed-wing UAVs for modular payload integration" developed at University of Southern Denmark.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18744058.svg)](https://doi.org/10.5281/zenodo.18744058)
+
 ## Abstract
 
 Fixed-wing unmanned aerial vehicles (UAVs) are widely used in environmental monitoring and research, yet sys-
