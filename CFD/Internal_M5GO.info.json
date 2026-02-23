@@ -1,0 +1,123 @@
+{
+    "version": 0,
+    "model_name": "ScimitarV5CFD.SLDASM",
+    "project_name": "Project(36)",
+    "config_name": "Default",
+    "project_path": "E:\\SDU\\2nd semester\\MDB1\\HardwareX\\Marios\\Marios\\77\\77.xmlconfig",
+    "finished": true,
+    "mesh": {
+        "cells_total": 249712,
+        "cells_fluid": 249712,
+        "cells_solid": 2872,
+        "cells_fluid_containing_solid": 3409
+    },
+    "telemetry": {
+        "prepare_geometry_finished": "10:36:03+0100",
+        "prepare_geometry_total_time": 12,
+        "cpu_time_solver_total": 599,
+        "iteration": 174,
+        "travel": 1.3815696475294097,
+        "phys_time": 0.0,
+        "time_step": 0.0,
+        "last_iteration_finished": "10:45:35+0100",
+        "cpu_time_per_last_iter": 3,
+        "cpu_time_left": 6,
+        "iterations_per_travel": 126
+    },
+    "goals": [
+        {
+            "goal": {
+                "name": "GG Average Total Pressure 1",
+                "unit": "pressure and stress",
+                "value": 101452.52680593342,
+                "progress": 100.0,
+                "criteria": 0.012661126425809925,
+                "delta": 0.006322521745460108,
+                "use_in_convergence": true
+            }
+        },
+        {
+            "goal": {
+                "name": "GG Average Density (Fluid) 2",
+                "unit": "density",
+                "value": 1.1983952206320578,
+                "progress": 100.0,
+                "criteria": 1.2485695713326805e-07,
+                "delta": 8.088439562570215e-08,
+                "use_in_convergence": true
+            }
+        },
+        {
+            "goal": {
+                "name": "GG Average Velocity (Y) 3",
+                "unit": "speed and velocity",
+                "value": -11.270748604603599,
+                "progress": 100.0,
+                "criteria": 0.0008615179258124428,
+                "delta": 0.0008445789593380937,
+                "use_in_convergence": true
+            }
+        },
+        {
+            "goal": {
+                "name": "GG Average Velocity (Z) 4",
+                "unit": "speed and velocity",
+                "value": 9.505434833800864,
+                "progress": 100.0,
+                "criteria": 0.0014693962947813688,
+                "delta": 0.0005380061576865103,
+                "use_in_convergence": true
+            }
+        },
+        {
+            "goal": {
+                "name": "GG Normal Force (Y) 5",
+                "unit": "force",
+                "value": -0.20342361751881352,
+                "progress": 100.0,
+                "criteria": 0.11976037546900205,
+                "delta": 0.031143902146878427,
+                "use_in_convergence": true
+            }
+        },
+        {
+            "goal": {
+                "name": "GG Normal Force (Z) 6",
+                "unit": "force",
+                "value": 19.725810795547975,
+                "progress": 100.0,
+                "criteria": 2.21323759070352,
+                "delta": 0.4303930842333621,
+                "use_in_convergence": true
+            }
+        }
+    ],
+    "settings": {
+        "default_fluids": [
+            "Water",
+            "Air"
+        ],
+        "analysis_type": "external",
+        "heat_conduction_in_solids": false,
+        "radiation": false,
+        "time_dependent": false,
+        "gravity": true,
+        "flow_type": "laminar and turbulent",
+        "cavitation": false,
+        "high_mach_number": true,
+        "free_surface": false,
+        "structural": false,
+        "electromagnetism": false
+    },
+    "system_info": {
+        "product_name": "Flow Simulation 2023  x64 / 6175 / SOLVER ver. efd_dev.5608_04.02.2022+HMN_Inlet_Rework_V1+HMN_Inlet_Rework_V2",
+        "cad_version": "SOLIDWORKS 2023 SP5.0",
+        "computer_name": "CYBERGHOST",
+        "user_name": "mario",
+        "os": "Windows 11 (or higher) (Version 10.0.26200)",
+        "cpu": "AMD Ryzen 7 7735HS with Radeon Graphics        ",
+        "number_of_cores": 16,
+        "memory_avail": 3966,
+        "memory_total": 15608
+    }
+}

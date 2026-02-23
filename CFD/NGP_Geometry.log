@@ -1,0 +1,33 @@
+
+START 10:35:36 
+-----------------------------------------------------------------------
+Rebuild Geometries (v0)...
+Rebuild Geometries (v0) takes 0.144 s
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+Init Geometry Triangulation And Reference Faces DB:
+Geometry: 0, Time 0.000 s
+Geometry: 1, Time 0.616 s
+Time 0.618 s
+-----------------------------------------------------------------------
+Try Load GDB And Check...
+Try Load GDB And Check takes 0.004 s
+Init GDB...
+Init GDB takes 4.096 s
+-----------------------------------------------------------------------
+MSG 10:35:41 CGeometryDB::InitGDB   [4.09819 sec]
+-------------CGeometryDB::InitPositiveBodiesMappingData ---------------------------------
+geometries count 2
+----processing negative geometries----
+geometry 0, negative face count 0
+geometry 0, positive face count 0
+geometry 1, negative face count 4902
+geometry 1, positive face count 0
+MaxFaceIndex 4901
+------processing positive geometries-----
+Geometry index 0	 type 0
+Positive Bodies 0
+Geometry index 1	 type 1
+Positive Bodies 53
+MSG 10:35:41 CGeometryDB::EnumGeometries2   [5.06078 sec]
+END 10:45:50 

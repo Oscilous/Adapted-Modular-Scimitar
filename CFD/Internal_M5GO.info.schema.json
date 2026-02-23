@@ -1,0 +1,547 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "root",
+    "description": "The solver interactive output JSON schema",
+    "default": {},
+    "required": [
+		"version",
+        "model_name",
+        "project_name",
+        "config_name",
+        "project_path",
+        "finished",
+        "mesh",
+        "telemetry",
+        "goals",
+        "settings",
+        "system_info"
+    ],
+    "properties": {
+		"version": {
+            "$id": "#/properties/version",
+            "type": "integer",
+            "title": "version",
+            "description": "This output file version",
+            "default": 0
+        },
+        "model_name": {
+            "$id": "#/properties/model_name",
+            "type": "string",
+            "title": "model_name",
+            "description": "The name of CAD model",
+            "default": ""
+        },
+        "project_name": {
+            "$id": "#/properties/project_name",
+            "type": "string",
+            "title": "project_name",
+            "description": "The name of CAD project",
+            "default": "",
+            "examples": [
+                "Project 1"
+            ]
+        },
+        "config_name": {
+            "$id": "#/properties/config_name",
+            "type": "string",
+            "title": "config_name",
+            "description": "The name of CAD project's configuration",
+            "default": "",
+            "examples": [
+                "default"
+            ]
+        },
+        "project_path": {
+            "$id": "#/properties/project_path",
+            "type": "string",
+            "title": "project_path",
+            "description": "The path to xmlconfig",
+            "default": "",
+            "examples": [
+                "C:\\Users\\xxx\\Desktop\\example\\1\\1.xmlconfig"
+            ]
+        },
+        "finished": {
+            "$id": "#/properties/finished",
+            "type": "boolean",
+            "title": "finished",
+            "description": "Shows whether the calculation has been finished",
+            "default": false
+        },
+        "mesh": {
+            "$id": "#/properties/mesh",
+            "type": "object",
+            "title": "mesh",
+            "description": "Mesh statistics",
+            "default": {},
+			"anyOf" : [
+				{"required": [
+					"cells_total",
+					"cells_fluid",
+					"cells_solid",
+					"cells_fluid_containing_solid"
+				]},
+				{"required": [
+					"finite_elements_structural"
+				]},
+				{"required": [
+					"finite_elements_electromagnetism"
+				]}
+			],
+            "properties": {
+                "cells_total": {
+                    "$id": "#/properties/mesh/properties/cells_total",
+                    "type": "integer",
+                    "title": "cells_total",
+                    "description": "Total number of cells in the mesh",
+                    "default": 0
+                },
+                "cells_fluid": {
+                    "$id": "#/properties/mesh/properties/cells_fluid",
+                    "type": "integer",
+                    "title": "cells_fluid",
+                    "description": "Total number of fluid cells in the mesh",
+                    "default": 0
+                },
+                "cells_solid": {
+                    "$id": "#/properties/mesh/properties/cells_solid",
+                    "type": "integer",
+                    "title": "cells_solid",
+                    "description": "Total number of solid cells in the mesh",
+                    "default": 0
+                },
+                "cells_fluid_containing_solid": {
+                    "$id": "#/properties/mesh/properties/cells_fluid_containing_solid",
+                    "type": "integer",
+                    "title": "cells_fluid_containing_solid",
+                    "description": "Total number of fluid cells containig solids in the mesh",
+                    "default": 0
+                },
+				"finite_elements_structural": {
+                    "$id": "#/properties/mesh/properties/finite_elements_structural",
+                    "type": "integer",
+                    "title": "finite_elements_structural",
+                    "description": "Total number of structural finite elements",
+                    "default": 0
+                },
+				"finite_elements_electromagnetism": {
+                    "$id": "#/properties/mesh/properties/finite_elements_electromagnetism",
+                    "type": "integer",
+                    "title": "finite_elements_electromagnetism",
+                    "description": "Total number of electromagnetism finite elements",
+                    "default": 0
+                }
+            },
+            "additionalProperties": true
+        },
+        "telemetry": {
+            "$id": "#/properties/telemetry",
+            "type": "object",
+            "title": "telemetry",
+            "description": "Calculation telemetry",
+            "default": {},
+            "required": [
+                "iteration",
+                "travel",
+                "phys_time",
+                "time_step",
+                "iterations_per_travel",
+                "cpu_time_per_last_iter",
+                "cpu_time_left",
+				"cpu_time_solver_total",
+				"last_iteration_finished",
+				"prepare_geometry_finished",
+				"prepare_geometry_total_time"
+            ],
+            "properties": {
+                "iteration": {
+                    "$id": "#/properties/telemetry/properties/iteration",
+                    "type": "integer",
+                    "title": "iteration",
+                    "description": "Current iteration number",
+                    "default": 0
+                },
+                "travel": {
+                    "$id": "#/properties/telemetry/properties/travel",
+                    "type": "number",
+                    "title": "travel",
+                    "description": "Current travel",
+                    "default": 0.0
+                },
+                "phys_time": {
+                    "$id": "#/properties/telemetry/properties/phys_time",
+                    "type": "number",
+                    "title": "phys_time",
+                    "description": "Current physical time",
+                    "default": 0.0
+                },
+                "time_step": {
+                    "$id": "#/properties/telemetry/properties/time_step",
+                    "type": "number",
+                    "title": "time_step",
+                    "description": "Current time step",
+                    "default": 0.0
+                },
+                "iterations_per_travel": {
+                    "$id": "#/properties/telemetry/properties/iterations_per_travel",
+                    "type": "integer",
+                    "title": "iterations_per_travel",
+                    "description": "Number of iterations per travel",
+                    "default": 0
+                },
+                "cpu_time_per_last_iter": {
+                    "$id": "#/properties/telemetry/properties/cpu_time_per_last_iter",
+                    "type": "integer",
+                    "title": "cpu_time_per_last_iter",
+                    "description": "CPU time spent on processing last iteration in seconds",
+                    "default": 0
+                },
+				"cpu_time_per_last_iter": {
+                    "$id": "#/properties/telemetry/properties/cpu_time_per_last_iter",
+                    "type": "integer",
+                    "title": "cpu_time_per_last_iter",
+                    "description": "CPU time spent on processing last iteration in seconds",
+                    "default": 0
+                },
+                "cpu_time_left": {
+                    "$id": "#/properties/telemetry/properties/cpu_time_left",
+                    "type": "integer",
+                    "title": "cpu_time_left",
+                    "description": "Estimated CPU time left in seconds",
+                    "default": 0
+                },
+				"cpu_time_solver_total": {
+                    "$id": "#/properties/telemetry/properties/cpu_time_solver_total",
+                    "type": "integer",
+                    "title": "cpu_time_solver_total",
+                    "description": "Total CPU time spent on solving the task in seconds",
+                    "default": 0
+                },
+				"prepare_geometry_total_time": {
+                    "$id": "#/properties/telemetry/properties/prepare_geometry_total_time",
+                    "type": "integer",
+                    "title": "prepare_geometry_total_time",
+                    "description": "Time spent on geometry preparation in seconds",
+                    "default": 0
+                },
+				"last_iteration_finished": {
+                    "$id": "#/properties/telemetry/properties/last_iteration_finished",
+                    "type": [ "string", "null" ],
+					"format": "time",
+                    "title": "last_iteration_finished",
+                    "description": "Time point when last iteration was finished (format: iso8601 time)"
+                },
+				"prepare_geometry_finished": {
+                    "$id": "#/properties/telemetry/properties/prepare_geometry_finished",
+                    "type": [ "string", "null" ],
+					"format": "time",
+                    "title": "prepare_geometry_finished",
+                    "description": "Time point when geometry preparation was finished (format: iso8601 time)"
+                }
+            },
+            "additionalProperties": true
+        },
+        "goals": {
+            "$id": "#/properties/goals",
+            "type": "array",
+            "title": "goals",
+            "description": "Array of goals",
+            "default": [],
+            "additionalItems": true,
+            "items": {
+				"$id": "#/properties/goals/items",
+				"type": "object",
+				"title": "goals_element",
+				"description": "An element of the array of goals",
+				"default": {},
+				"required": [
+					"goal"
+				],
+				"properties": {
+					"goal": {
+						"$id": "#/properties/goals/items/0/properties/goal",
+						"type": "object",
+						"title": "goal",
+						"description": "Goal description",
+						"default": {},
+						"required": [
+							"name",
+							"unit",
+							"value",
+							"progress",
+							"criteria",
+							"delta",
+							"use_in_convergence"
+						],
+						"properties": {
+							"name": {
+								"$id": "#/properties/goals/items/0/properties/goal/properties/name",
+								"type": "string",
+								"title": "goal name",
+								"description": "Goal name",
+								"default": "",
+								"examples": [
+									"SG Av Static Pressure 1"
+								]
+							},
+							"unit": {
+								"$id": "#/properties/goals/items/0/properties/goal/properties/unit",
+								"type": "string",
+								"title": "goal unit",
+								"description": "Goal unit",
+								"default": "",
+								"examples": [
+									"pressure and stress"
+								]
+							},
+							"value": {
+								"$id": "#/properties/goals/items/0/properties/goal/properties/value",
+								"type": "number",
+								"title": "goal value",
+								"description": "Goal value",
+								"default": 0.0,
+							},
+							"progress": {
+								"$id": "#/properties/goals/items/0/properties/goal/properties/progress",
+								"type": "number",
+								"title": "goal progress",
+								"description": "Goal convergence progress",
+								"default": 0.0
+							},
+							"criteria": {
+								"$id": "#/properties/goals/items/0/properties/goal/properties/criteria",
+								"type": "number",
+								"title": "goal criteria",
+								"description": "Goal convergence criteria",
+								"default": 0.0,
+							},
+							"delta": {
+								"$id": "#/properties/goals/items/0/properties/goal/properties/delta",
+								"type": "number",
+								"title": "goal delta",
+								"description": "Goal convergence delta",
+								"default": 0.0,
+							},
+							"use_in_convergence": {
+								"$id": "#/properties/goals/items/0/properties/goal/properties/use_in_convergence",
+								"type": "boolean",
+								"title": "goal use_in_convergence",
+								"description": "Shows whether the goal is used in convergence",
+								"default": false
+							}
+						},
+						"additionalProperties": true
+					}
+				}
+            }
+        },
+        "settings": {
+            "$id": "#/properties/settings",
+            "type": "object",
+            "title": "settings",
+            "description": "Project settings",
+            "default": {},
+            "required": [
+                "default_fluids",
+                "analysis_type",
+                "heat_conduction_in_solids",
+                "radiation",
+                "time_dependent",
+                "gravity",
+                "flow_type",
+                "cavitation",
+                "high_mach_number",
+                "free_surface"
+            ],
+            "properties": {
+                "default_fluids": {
+                    "$id": "#/properties/settings/properties/default_fluids",
+                    "type": "array",
+                    "title": "default_fluids",
+                    "description": "Default fluids used in calculation",
+                    "default": [],
+					"additionalItems": true,
+					"items": {
+						"type": "string",
+						"title": "fluid_name",
+						"description": "A default fluid's name",
+						"default": ""
+					}
+                },
+                "analysis_type": {
+                    "$id": "#/properties/settings/properties/analysis_type",
+                    "type": "string",
+                    "title": "analysis_type",
+                    "description": "Analysis type",
+                    "default": "",
+					"enum" : ["internal", "external"]
+                },
+                "heat_conduction_in_solids": {
+                    "$id": "#/properties/settings/properties/heat_conduction_in_solids",
+                    "type": "boolean",
+                    "title": "heat_conduction_in_solids",
+                    "description": "Shows if heat condution in solids is enabled",
+                    "default": false
+                },
+                "radiation": {
+                    "$id": "#/properties/settings/properties/radiation",
+                    "type": "boolean",
+                    "title": "radiation",
+                    "description": "Shows if radiation is enabled",
+                    "default": false
+                },
+                "time_dependent": {
+                    "$id": "#/properties/settings/properties/time_dependent",
+                    "type": "boolean",
+                    "title": "time_dependent",
+                    "description": "Shows if calculation is time dependent",
+                    "default": false
+                },
+                "gravity": {
+                    "$id": "#/properties/settings/properties/gravity",
+                    "type": "boolean",
+                    "title": "gravity",
+                    "description": "Shows if gravity is enabled",
+                    "default": false
+                },
+                "flow_type": {
+                    "$id": "#/properties/settings/properties/flow_type",
+                    "type": "string",
+                    "title": "flow_type",
+                    "description": "Calculation flow type",
+                    "default": "",
+					"enum": ["laminar", "turbulent", "laminar and turbulent"] 
+                },
+                "cavitation": {
+                    "$id": "#/properties/settings/properties/cavitation",
+                    "type": "boolean",
+                    "title": "cavitation",
+                    "description": "Shows if cavitation is enabled",
+                    "default": false
+                },
+                "high_mach_number": {
+                    "$id": "#/properties/settings/properties/high_mach_number",
+                    "type": "boolean",
+                    "title": "high_mach_number",
+                    "description": "Shows if high mach number (explicit) solver is used",
+                    "default": false
+                },
+                "free_surface": {
+                    "$id": "#/properties/settings/properties/free_surface",
+                    "type": "boolean",
+                    "title": "free_surface",
+                    "description": "Shows if free surface is enabled",
+                    "default": false
+                },
+				"structural": {
+                    "$id": "#/properties/settings/properties/structural",
+                    "type": "boolean",
+                    "title": "structural",
+                    "description": "Shows if structral analysis is enabled",
+                    "default": false
+                },
+				"electromagnetism": {
+                    "$id": "#/properties/settings/properties/free_surface",
+                    "type": "boolean",
+                    "title": "electromagnetism",
+                    "description": "Shows if electromagnetism analysis is enabled",
+                    "default": false
+                }
+            },
+            "additionalProperties": true
+        },
+        "system_info": {
+            "$id": "#/properties/system_info",
+            "type": "object",
+            "title": "system_info",
+            "description": "system info",
+            "default": {},
+            "required": [
+                "product_name",
+                "cad_version",
+                "computer_name",
+                "user_name",
+                "os",
+                "cpu",
+				"number_of_cores",
+                "memory_avail",
+                "memory_total"
+            ],
+            "properties": {
+                "product_name": {
+                    "$id": "#/properties/system_info/properties/product_name",
+                    "type": "string",
+                    "title": "product_name",
+                    "description": "Product name",
+                    "default": ""
+                },
+                "cad_version": {
+                    "$id": "#/properties/system_info/properties/cad_version",
+                    "type": "string",
+                    "title": "cad_version",
+                    "description": "CAD version",
+                    "default": ""
+                },
+                "computer_name": {
+                    "$id": "#/properties/system_info/properties/computer_name",
+                    "type": "string",
+                    "title": "computer_name",
+                    "description": "Computer name",
+                    "default": ""
+                },
+                "user_name": {
+                    "$id": "#/properties/system_info/properties/user_name",
+                    "type": "string",
+                    "title": "user_name",
+                    "description": "User name",
+                    "default": ""
+                },
+                "os": {
+                    "$id": "#/properties/system_info/properties/os",
+                    "type": "string",
+                    "title": "os",
+                    "description": "Operating system",
+                    "default": "",
+                    "examples": [
+                        "Windows 10 (or higher) (Version 10.0.18363)"
+                    ]
+                },
+                "cpu": {
+                    "$id": "#/properties/system_info/properties/cpu",
+                    "type": "string",
+                    "title": "cpu",
+                    "description": "CPU string",
+                    "default": "",
+                    "examples": [
+                        "Intel(R) Xeon(R) W-2123 CPU @ 3.60GHz"
+                    ]
+                },
+				"number_of_cores": {
+                    "$id": "#/properties/system_info/properties/number_of_cores",
+                    "type": "integer",
+                    "title": "number_of_cores",
+                    "description": "Number of cores",
+                    "default": 0
+                },
+                "memory_avail": {
+                    "$id": "#/properties/system_info/properties/memory_avail",
+                    "type": "integer",
+                    "title": "memory_avail",
+                    "description": "Available memory in megabytes",
+                    "default": 0
+                },
+                "memory_total": {
+                    "$id": "#/properties/system_info/properties/memory_total",
+                    "type": "integer",
+                    "title": "memory_total",
+                    "description": "Total memory in megabytes",
+                    "default": 0
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}

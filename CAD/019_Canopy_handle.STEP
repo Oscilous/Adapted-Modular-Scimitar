@@ -1,0 +1,28 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION (( 'STEP AP214' ),
+    '1' );
+FILE_NAME ('019_Canopy_handle.STEP',
+    '2026-02-23T12:27:49',
+    ( '' ),
+    ( '' ),
+    'SwSTEP 2.0',
+    'SolidWorks 2023',
+    '' );
+FILE_SCHEMA (( 'AUTOMOTIVE_DESIGN' ));
+ENDSEC;
+
+DATA;
+#1 = APPLICATION_PROTOCOL_DEFINITION ( 'draft international standard', 'automotive_design', 1998, #4 ) ;
+#2 = PRODUCT ( '019_Canopy_handle', '019_Canopy_handle', '', ( #3 ) ) ;
+#3 = PRODUCT_CONTEXT ( 'NONE', #4, 'mechanical' ) ;
+#4 = APPLICATION_CONTEXT ( 'automotive_design' ) ;
+#5 = PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE ( 'ANY', '', #2, .NOT_KNOWN. ) ;
+#6 = APPLICATION_PROTOCOL_DEFINITION ( 'draft international standard', 'automotive_design', 1998, #10 ) ;
+#7 = PRODUCT_RELATED_PRODUCT_CATEGORY ( 'part', '', ( #2 ) ) ;
+#8 = PRODUCT_DEFINITION ( 'UNKNOWN', '', #5, #11 ) ;
+#9 = PRODUCT_DEFINITION_SHAPE ( 'NONE', 'NONE',  #8 ) ;
+#10 = APPLICATION_CONTEXT ( 'automotive_design' ) ;
+#11 = PRODUCT_DEFINITION_CONTEXT ( 'detailed design', #10, 'design' ) ;
+ENDSEC;
+END-ISO-10303-21;

@@ -1,0 +1,7 @@
+2026-Feb-02 10:45:38
+Computer name:	CYBERGHOST
+Number of cores used in calculation:	16
+Configuration name:	Default
+Project name:	Project(36)
+
+Warnings on last iteration: 

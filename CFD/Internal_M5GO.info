@@ -1,0 +1,58 @@
+Model: ScimitarV5CFD.SLDASM
+Project name: Project(36)
+Config name: Default
+Project path: E:\SDU\2nd semester\MDB1\HardwareX\Marios\Marios\77\77.xmlconfig
+Status: Finished
+
+Number of cells:
+    Total cells: 249712
+    Fluid cells: 249712
+    Solid cells: 2872
+    Fluid cells containing solids: 3409
+
+
+Geometry preparation finished: 10:36:03
+Geometry preparation time: 00:00:12
+Solver CPU time: 00:09:59
+Iterations: 174
+Travels: 1.38157
+Physical time: 0.000000e+00 s
+Current time step: 0.000000e+00 s
+Last iteration finished: 10:45:35
+CPU time per last iteration: 00:00:03
+CPU time left: 00:00:06
+Iterations per 1 travel: 126
+
+Goals
+    Name                         | Unit (SI)           | Value           | Progress  | Critetia        | Delta           | Use in convergence
+    GG Average Total Pressure 1  | pressure and stress |       101452.53 |     100.0 |            0.01 |            0.01 | On
+    GG Average Density (Fluid) 2 | density             |            1.20 |     100.0 |            0.00 |            0.00 | On
+    GG Average Velocity (Y) 3    | speed and velocity  |          -11.27 |     100.0 |            0.00 |            0.00 | On
+    GG Average Velocity (Z) 4    | speed and velocity  |            9.51 |     100.0 |            0.00 |            0.00 | On
+    GG Normal Force (Y) 5        | force               |           -0.20 |     100.0 |            0.12 |            0.03 | On
+    GG Normal Force (Z) 6        | force               |           19.73 |     100.0 |            2.21 |            0.43 | On
+
+Project details
+    Default fluids: Water, Air
+    Analysis type: External
+    Heat conduction in solids: Off
+    Radiation: Off
+    Time dependent: Off
+    Gravitational effects: On
+    Flow type: Laminar and turbulent
+    Cavitation: Off
+    Hign Mach number flow: On
+    Free surface: Off
+    Structural: Off
+    Electromagnetism: Off
+
+System info
+    Product: Flow Simulation 2023  x64 / 6175 / SOLVER ver. efd_dev.5608_04.02.2022+HMN_Inlet_Rework_V1+HMN_Inlet_Rework_V2
+    CAD version: SOLIDWORKS 2023 SP5.0
+    Computer name: CYBERGHOST
+    User name: mario
+    Operating system: Windows 11 (or higher) (Version 10.0.26200)
+    Processors: AMD Ryzen 7 7735HS with Radeon Graphics        
+    Number of cores: 16
+    Memory: 3966 MB / 15608 MB
+
